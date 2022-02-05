@@ -12,7 +12,6 @@ namespace App1
 {
     public partial class Form1 : Form
     {
-        //public string textBoxText = "Instrukcja: " + Environment.NewLine + "1. Naciśnij przycisk \"Załaduj obraz\", aby wybrać i załadować obraz. " + Environment.NewLine + "2. Naciśnij przycisk \"Zbadaj\", aby dokonać analizy obrazu. " + Environment.NewLine + Environment.NewLine + "Wyniki zostaną przedstawione w osobnym oknie.";
 
         private string imagePath = string.Empty;
         public string logFilePath = @"C:\Users\alepa\Desktop\Inz\Code\log_file.txt";
@@ -52,7 +51,7 @@ namespace App1
             }
             catch (Exception exception)
             {
-                Console.WriteLine("{0} Exception caught.", exception);
+                Console.WriteLine("{0} - Exception caught.", exception);
             }
         }
 
@@ -66,31 +65,38 @@ namespace App1
 
             if (String.IsNullOrEmpty(imagePath))
             {
-                MessageBox.Show("Najpierw załaduj obraz!", "Ostrzeżenie");
+                MessageBox.Show("Najpierw załaduj obraz!", "Ostrzeżenie!");
             }
             else
             {
                 textBox1.Text = "Automatyczna analiza rozpoczęta - nie zamykaj aplikacji";
                 run_script();
                 textBox1.Text = "Automatyczna analiza zakończona";
-
-                string[] logFileLines = File.ReadAllLines(logFilePath);
+                string[] logFileLines = new string[0];
+                try
+                {
+                    logFileLines = File.ReadAllLines(logFilePath);
+                }
+                catch
+                {
+                    MessageBox.Show("Nie można odczytać wyników badania. Zamknij wszystkie otwarte edytory tekstu i uruchom ponownie aplikację.", "Nieoczekiwany błąd!");
+                }
 
                 foreach (string line in logFileLines)
                 {
                     int position = line.IndexOf("=");
 
-                    if (line.Contains("[Results] A="))
+                    if (line.Contains("[Wyniki] A="))
                     {
                         string line_temp = line.Substring(position + 1);
                         Program.A = Convert.ToDouble(line_temp);
                     }
-                    if (line.Contains("[Results] B="))
+                    if (line.Contains("[Wyniki] B="))
                     {
                         string line_temp = line.Substring(position + 1);
                         Program.B = Convert.ToDouble(line_temp);
                     }
-                    if (line.Contains("[Results] C="))
+                    if (line.Contains("[Wyniki] C="))
                     {
                         string line_temp = line.Substring(position + 1);
                         Program.C = Convert.ToDouble(line_temp);
@@ -117,7 +123,7 @@ namespace App1
                 textBox6.Text = Program.TDS.ToString();
 
                 button3.Visible = true;
-            }
+                }
 
         }
 

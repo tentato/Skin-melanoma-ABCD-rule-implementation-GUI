@@ -47,7 +47,7 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cancel.Location = new System.Drawing.Point(126, 658);
-            this.cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(103, 33);
             this.cancel.TabIndex = 0;
@@ -61,7 +61,7 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OK.Location = new System.Drawing.Point(372, 658);
-            this.OK.Margin = new System.Windows.Forms.Padding(2);
+            this.OK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(103, 33);
             this.OK.TabIndex = 1;
@@ -76,7 +76,7 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(482, 109);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(56, 17);
             this.checkBox1.TabIndex = 2;
@@ -91,7 +91,7 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(482, 220);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(108, 17);
             this.checkBox2.TabIndex = 3;
@@ -106,7 +106,7 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(482, 339);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(56, 17);
             this.checkBox3.TabIndex = 4;
@@ -121,7 +121,7 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(482, 450);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(87, 17);
             this.checkBox4.TabIndex = 5;
@@ -136,7 +136,7 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(482, 556);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(117, 17);
             this.checkBox5.TabIndex = 6;
@@ -150,10 +150,10 @@ namespace App1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label1.Location = new System.Drawing.Point(205, 9);
+            this.label1.Location = new System.Drawing.Point(146, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 23);
+            this.label1.Size = new System.Drawing.Size(352, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "Zaznacz struktury, które występują w badanej zmianie.";
             // 
@@ -187,7 +187,7 @@ namespace App1
             this.Controls.Add(this.OK);
             this.Controls.Add(this.cancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Badanie współczynnika D";

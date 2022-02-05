@@ -29,11 +29,14 @@ namespace App1
 
         private void Form2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            
+            Program.TDS = Program.A + Program.B + Program.C;
+            MessageBox.Show("Nie zatwierdzono wyboru przyciskiem \"OK\"! Prezentacja wyniku z pominięciem współczynnika D.", "Ostrzeżenie!");
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
+            Program.TDS = Program.A + Program.B + Program.C;
+            MessageBox.Show("Nie zatwierdzono wyboru przyciskiem \"OK\"! Prezentacja wyniku z pominięciem współczynnika D.", "Ostrzeżenie!");
             Close();
         }
 
@@ -42,32 +45,32 @@ namespace App1
             Program.D = licznik*0.5;
             using (StreamWriter sw = File.AppendText(logFilePath))
             {
-                sw.WriteLine("[Results] D=" + Program.D);
+                sw.WriteLine("[Wyniki] D=" + Program.D);
             }
             Program.TDS = Program.A + Program.B + Program.C + Program.D;
             this.Hide();
             if(Program.TDS < 4.75)
             {
-                MessageBox.Show("Benign melanocytic lesion", "Wynik");
+                MessageBox.Show("Łagodna zmiana melanocytowa", "Wynik");
                 using (StreamWriter sw = File.AppendText(logFilePath))
                 {
-                    sw.WriteLine("[Final result] Benign melanocytic lesion... TDS = " + Program.TDS);
+                    sw.WriteLine("[Wynik koncowy] Lagodna zmiana melanocytowa... TDS = " + Program.TDS);
                 }
             }
             else if(Program.TDS < 5.45)
             {
-                MessageBox.Show("Suspicious lesion; close follow-up or excision recommended", "Wynik");
+                MessageBox.Show("Podejrzana zmiana - zalecana ścisła obserwacja", "Wynik");
                 using (StreamWriter sw = File.AppendText(logFilePath))
                 {
-                    sw.WriteLine("[Final result] Suspicious lesion; close follow-up or excision recommended... TDS = " + Program.TDS);
+                    sw.WriteLine("[Wynik koncowy] Podejrzana zmiana - zalecana scisla obserwacja... TDS = " + Program.TDS);
                 }
             }
             else 
             {
-                MessageBox.Show("Lesion highly suggestive of melanoma...\n\nFalse-positive score (>5.45) sometimes observed in:\nReed and Spitz nevus\nClark nevus with globular pattern\nCongenital melanocytic nevus.", "Wynik");
+                MessageBox.Show("Zmiana wysoce sugerująca czerniaka...\n\nWynik fałszywie pozytywny (>5.45) jest czasami obserwowany w:\n- znamieniu Reeda i Spitza\n- znamieniu Clarka z wzorem kulistym\n- wrodzonym znamieniu melanocytowym.", "Wynik");
                 using (StreamWriter sw = File.AppendText(logFilePath))
                 {
-                    sw.WriteLine("[Final result] Lesion highly suggestive of melanoma...\n\nFalse-positive score (>5.45) sometimes observed in:\nReed and Spitz nevus\nClark nevus with globular pattern\nCongenital melanocytic nevus TDS = " + Program.TDS);
+                    sw.WriteLine("[Wynik koncowy] Zmiana wysoce sugerujaca czerniaka...\n\nWynik falszywie pozytywny (>5.45) jest czasami obserwowany w:\n- znamieniu Reeda i Spitza\n- znamieniu Clarka z wzorem kulistym\n- wrodzonym znamieniu melanocytowym. TDS = " + Program.TDS);
                 }
             }
         }
